@@ -1,0 +1,62 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #bcdbea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+.container{
+    width: 370px;
+    height: 663px;
+    background-color: #FAFAFA;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 10px;
+}
+input{
+    width: 370px;
+    height: 150px;
+    box-sizing: border-box;
+    background-color: black;
+    padding: 45px 20px 10px 20px;
+    color: white;
+    font-size: 60px;
+    text-align: right;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 300px;
+    height: 300px;
+    gap: 14px;
+    padding-left: 35px;
+    margin-top: 20px;
+    
+}
+button{
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 21px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.op{
+    background-color: #E1D5E9;
+}
+.equal{
+    background-color: #9228E2;
+}
+.num{
+    background-color: white;
+}
+.AC{
+    background-color: #FEB92D;
+}
+.AC,.num,.equal,.op{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
