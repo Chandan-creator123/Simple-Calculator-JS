@@ -20,10 +20,14 @@ input{
     background-color: black;
     padding: 45px 20px 10px 20px;
     color: white;
-    font-size: 60px;
+    font-size: 50px;
     text-align: right;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    caret-color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .buttons{
     display: grid;
