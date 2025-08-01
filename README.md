@@ -1,81 +1,96 @@
-# Simple-Calculator-JS
-# 📟 JavaScript Calculator
+# 🧮 JavaScript Calculator
 
-A beautiful, responsive calculator built using **HTML**, **CSS**, and **JavaScript** — featuring basic and scientific operations like square root, power, percent, brackets, and more.
-
----
-
-## 🌐 Live Preview
-
-> Add GitHub Pages or Netlify/Vercel deployment link here if available.
-
-[🔗 Live Demo](https://your-live-link-here.com)
+A responsive, modern calculator built using **HTML**, **CSS**, and **JavaScript**. This project mimics the layout and behavior of a real-world scientific calculator, supporting basic arithmetic operations, square roots, percentages, and exponents.
 
 ---
 
-## 🖼️ Screenshots
+## 📸 Screenshots
 
-### 🧮 Calculator UI
+| Desktop View | Expression Overflow |
+|--------------|----------------------|
+| ![Main UI](images/screenshot1.png) | ![Overflow Shrink](images/screenshot2.png) |
 
-![Calculator UI](screenshots/calculator-ui.png)
-
-### 🌟 Favicon Preview
-
-![Favicon](screenshots/favicon.png)
 
 ---
 
-## 🚀 Features
+## 🎯 Features
 
-- Basic arithmetic operations: `+`, `-`, `×`, `÷`
-- Advanced functions: `x²`, `√`, `%`, `()`
-- AC (clear) and backspace (`⌫`)
-- Result cleared on next input after `=`
-- Rounded button design with soft shadows
-- Responsive layout using CSS Grid
-- Error-safe evaluation logic
-- Favicon for browser tab
-
----
-
-## 🧠 Tech Stack
-
-| Language     | Purpose          |
-|--------------|------------------|
-| HTML         | Structure         |
-| CSS          | Styling           |
-| JavaScript   | Calculator logic  |
+- ✅ Clean and responsive layout
+- ✅ Styled display with auto-shrinking font for long expressions
+- ✅ Blinking cursor effect (optional, fake)
+- ✅ Supports:
+  - Addition, Subtraction, Multiplication, Division
+  - Square root (`√x`)
+  - Squaring a number (`x²`)
+  - Percentage (`%`)
+  - Backspace and Clear All (`AC`, `⌫`)
+- ✅ Operable only via on-screen buttons (user typing disabled)
+- ✅ Input sanitization with safe evaluation
 
 ---
 
-## 🧾 How It Works
+## ⚙️ Technologies Used
 
-- Numbers and operators are entered using `val()` and `operator()` functions.
-- The `equal()` function safely evaluates expressions with `eval()` after replacing symbols (`x`, `÷`, `√`, `^2`, `%`).
-- `justEvaluated` flag ensures display clears correctly after results.
-- Layout uses CSS Grid to arrange buttons neatly.
+| Technology | Purpose |
+|------------|---------|
+| HTML5      | Markup structure |
+| CSS3       | Styling and layout |
+| JavaScript | Logic and interaction |
 
 ---
 
-## 📁 Project Structure
+## 🗂️ Folder Structure
 
 calculator/
 │
-├── index.html # Main layout
-├── style.css # Styling
-├── script.js # Calculator logic
-├── favicon.ico # Tab icon
-└── screenshots/ # UI images
-├── calculator-ui.png
-└── favicon.png
-
+├── index.html # Main HTML file
+├── style.css # All styling for layout and buttons
+├── script.js # Calculator logic and dynamic functions
+├── favicon/ # Favicon images
+│ └── finance.png
+├── images/ # Screenshots for README (optional)
+│ ├── screenshot1.png
+│ └── screenshot2.png
 
 
 ---
 
-## 🔧 How to Use Locally
+## 🚀 How to Use
 
-1. **Clone the repository**
+1. **Clone the repository** or download the ZIP:
+   ```bash
+   git clone https://github.com/your-username/js-calculator.git
 
-```bash
-git clone https://github.com/yourusername/calculator.git
+
+2.Open the project folder and run index.html in your browser:
+
+  Double-click index.html, or
+  
+  Right-click > Open With > Your Browser
+  
+
+3.Use the calculator:
+
+  Click number and operator buttons.
+  
+  Use √, x², %, AC, and ⌫ as needed.
+  
+  Press = to see the result.
+
+
+📁 Example Code Snippet (JavaScript)
+function equal() {
+    try {
+        let expression = display.value
+            .replace(/x/g, '*')
+            .replace(/÷/g, '/')
+            .replace(/√\(([^)]+)\)/g, 'Math.sqrt($1)')
+            .replace(/(\d+)\^2/g, 'Math.pow($1, 2)')
+            .replace(/%/g, '/100');
+
+        display.value = eval(expression);
+        adjustFontSize();
+    } catch {
+        display.value = "Error";
+    }
+}
